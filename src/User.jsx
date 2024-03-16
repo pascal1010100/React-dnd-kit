@@ -1,0 +1,31 @@
+import {useSortable} from "@dnd-kit/sortable"
+import { CSS } from "@dnd-kit/utilities"
+
+function User({user}) {
+
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        tranform,
+        transition
+    } = useSortable ({
+        id: user.id
+    })
+    const style = {
+        tranform:CSS.Transform.toString(tranform),
+        transition
+    }
+    return (
+    <div 
+    style={style}
+    ref={setNodeRef}
+        {...attributes}
+        {...listeners}
+        className="bg-white p-2 rounded-md shadow-md text-black my-2">
+        <h1>{user.name}</h1>
+    </div>
+    )
+}
+
+export default User
