@@ -10,11 +10,13 @@ function User({user}) {
         tranform,
         transition
     } = useSortable ({
-        id: user.id
+        id:user.id
     })
     const style = {
         tranform:CSS.Transform.toString(tranform),
         transition
+
+
     }
     return (
     <div 
@@ -22,8 +24,9 @@ function User({user}) {
     ref={setNodeRef}
         {...attributes}
         {...listeners}
-        className="bg-white p-2 rounded-md shadow-md text-black my-2">
-        <h1>{user.name}</h1>
+        className="bg-white p-2 rounded-md shadow-md text-black
+         my-2">
+            <h1>{user.name}</h1>
     </div>
     )
 }
