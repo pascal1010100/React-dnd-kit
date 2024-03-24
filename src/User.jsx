@@ -7,13 +7,13 @@ function User({user}) {
         attributes,
         listeners,
         setNodeRef,
-        tranform,
+        transform,
         transition
     } = useSortable ({
-        id:user.id
+        id: user.id
     })
     const style = {
-        tranform:CSS.Transform.toString(tranform),
+        transform:CSS.Transform.toString(transform),
         transition
 
 

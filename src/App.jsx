@@ -17,19 +17,19 @@ function App() {
    const handleDragEnd = (event ) => {
 const {active, over} = event
     
-
+    setPeople((people) => {
     const oldIndex = people.findIndex(person => person.id === active.id)
     const newIndex = people.findIndex(person => person.id === over.id)
   
-    console.log("oldIdex" , oldIndex )
-    console.log("newIndex" , newIndex)
-
-    const newOrder = arrayMove (people, oldIndex,newIndex)
-    console.log(newOrder)
+   return arrayMove(people, oldIndex, newIndex);
+   });
   }
 
+
   return (
-   <DndContext collisionDetection={closestCenter}
+    <div className="flex justify-center items-center">
+         <div className="w-4/6" >
+         <DndContext collisionDetection={closestCenter}
     onDragEnd={handleDragEnd}>
    <h1 className="text-2xl font-bold">Users List</h1>
 
@@ -44,6 +44,8 @@ const {active, over} = event
 
     </SortableContext>
    </DndContext>
+    </div>
+    </div>
   )
 }
 export default App
